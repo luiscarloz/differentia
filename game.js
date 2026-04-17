@@ -132,7 +132,15 @@ function setupQuizBoard() {
 function renderBoard() {
     var board = document.getElementById('game-board');
     board.innerHTML = '';
-    board.className = 'game-board cols-4';
+    var total = cards.length;
+    board.className = 'game-board';
+    if (total <= 8) {
+        board.classList.add('grid-2x4');
+    } else if (total <= 12) {
+        board.classList.add('grid-3x4');
+    } else {
+        board.classList.add('grid-4x4');
+    }
 
     var lupaSvg = '<svg class="card-back-icon" viewBox="0 0 40 40"><circle cx="17" cy="17" r="11" fill="none" stroke="#5a3e28" stroke-width="3"/><line x1="25" y1="25" x2="36" y2="36" stroke="#5a3e28" stroke-width="3" stroke-linecap="round"/></svg>';
 
@@ -146,7 +154,7 @@ function renderBoard() {
         if (gameMode === 'classic') {
             frontContent =
                 '<div class="card-front">' +
-                    '<img src="' + sanitizeAttr(card.value) + '" alt="' + sanitizeAttr(card.label) + '">' +
+                    '<img src="' + sanitizeAttr(card.value) + '" alt="' + sanitizeAttr(card.label) + '" loading="eager">' +
                     '<span class="card-label">' + sanitize(card.label) + '</span>' +
                 '</div>';
         } else {
