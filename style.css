@@ -34,6 +34,8 @@ button{font-family:'Nunito',sans-serif;touch-action:manipulation}
 .game-wordsearch::before{background:var(--r)}
 .game-trail::before{background:var(--mc)}
 .home-footer{margin-top:20px;color:rgba(58,37,16,.5);font-size:.8rem;font-weight:700}
+.powered-by{display:inline-block;margin-top:8px;font-size:.6rem;color:rgba(58,37,16,.3);text-decoration:none;font-weight:600;letter-spacing:.5px;transition:color .2s}
+.powered-by:active{color:rgba(58,37,16,.5)}
 .btn{display:flex;align-items:center;gap:14px;padding:16px 20px;border:none;border-radius:14px;cursor:pointer;transition:transform .15s ease;width:100%;text-align:left;font-family:'Nunito',sans-serif}
 .btn:active{transform:scale(.97)}
 .btn-adventure{background:linear-gradient(135deg,var(--v) 0%,var(--ve) 100%);color:#fff;box-shadow:0 4px 12px rgba(74,140,52,.35),inset 0 1px 0 rgba(255,255,255,.2);border:2px solid var(--vb)}
