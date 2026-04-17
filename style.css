@@ -392,7 +392,6 @@ body {
     background: linear-gradient(145deg, #d4a574 0%, #b8864e 50%, #a07032 100%);
     box-shadow: 0 3px 10px rgba(90,62,40,0.3);
     border: 3px solid #8B6914;
-    position: relative;
 }
 
 .card-back::after {
@@ -420,7 +419,6 @@ body {
     border: 3px solid #c4a06a;
     flex-direction: column;
     padding: 0;
-    position: relative;
 }
 
 .card-front img {
