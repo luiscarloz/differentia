@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differentia - Jogos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- TELA INICIAL -->
+    <div id="screen-home" class="screen active">
+        <div class="home-container">
+            <div class="logo-area">
+                <h1 class="logo-title">Differentia</h1>
+                <p class="logo-subtitle">Mundo de Jogos</p>
+            </div>
+            <div class="menu-buttons">
+                <button class="btn btn-primary" onclick="startClassicMode()">
+                    <span class="btn-icon">🃏</span>
+                    <span class="btn-text">Jogo da Memória</span>
+                    <span class="btn-desc">Encontre os pares!</span>
+                </button>
+                <button class="btn btn-secondary" onclick="startQuizMode()">
+                    <span class="btn-icon">❓</span>
+                    <span class="btn-text">Memória Quiz</span>
+                    <span class="btn-desc">Perguntas e Respostas!</span>
+                </button>
+            </div>
+            <footer class="home-footer">
+                <p>&copy; Differentia World</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- TELA DE DIFICULDADE -->
+    <div id="screen-difficulty" class="screen">
+        <div class="difficulty-container">
+            <button class="btn-back" onclick="goHome()">← Voltar</button>
+            <h2 class="screen-title" id="difficulty-title">Escolha a dificuldade</h2>
+            <div class="difficulty-buttons">
+                <button class="btn btn-easy" onclick="selectDifficulty('easy')">
+                    <span class="btn-icon">⭐</span>
+                    <span class="btn-text">Fácil</span>
+                    <span class="btn-desc">4 pares</span>
+                </button>
+                <button class="btn btn-medium" onclick="selectDifficulty('medium')">
+                    <span class="btn-icon">⭐⭐</span>
+                    <span class="btn-text">Médio</span>
+                    <span class="btn-desc">6 pares</span>
+                </button>
+                <button class="btn btn-hard" onclick="selectDifficulty('hard')">
+                    <span class="btn-icon">⭐⭐⭐</span>
+                    <span class="btn-text">Difícil</span>
+                    <span class="btn-desc">8 pares</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TELA DO JOGO -->
+    <div id="screen-game" class="screen">
+        <div class="game-header">
+            <button class="btn-back" onclick="goHome()">← Menu</button>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="stat-label">Jogadas</span>
+                    <span class="stat-value" id="moves-count">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Pares</span>
+                    <span class="stat-value" id="pairs-count">0/0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Tempo</span>
+                    <span class="stat-value" id="timer">00:00</span>
+                </div>
+            </div>
+        </div>
+        <div class="game-board" id="game-board"></div>
+    </div>
+
+    <!-- TELA DE VITÓRIA -->
+    <div id="screen-win" class="screen">
+        <div class="win-container">
+            <div class="win-stars">⭐🎉⭐</div>
+            <h2 class="win-title">Parabéns!</h2>
+            <p class="win-subtitle">Você encontrou todos os pares!</p>
+            <div class="win-stats">
+                <p>Jogadas: <strong id="win-moves">0</strong></p>
+                <p>Tempo: <strong id="win-time">00:00</strong></p>
+            </div>
+            <div class="win-buttons">
+                <button class="btn btn-primary" onclick="restartGame()">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">Jogar de Novo</span>
+                </button>
+                <button class="btn btn-secondary" onclick="goHome()">
+                    <span class="btn-icon">🏠</span>
+                    <span class="btn-text">Menu Principal</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
