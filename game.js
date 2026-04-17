@@ -1,5 +1,5 @@
 // ===== GAME STATE =====
-let gameMode = 'classic'; // 'classic' or 'quiz'
+let gameMode = 'classic';
 let difficulty = 'easy';
 let cards = [];
 let flippedCards = [];
@@ -10,41 +10,41 @@ let timerInterval = null;
 let seconds = 0;
 let isLocked = false;
 
-// ===== CARD DATA =====
-// MODO CLÁSSICO: Troque os emojis por imagens quando tiver os arquivos
-// Para usar imagens, mude "emoji" para "image" e coloque o caminho em "value"
-// Exemplo: { type: 'image', value: 'images/personagem1.png', label: 'Nome' }
+// ===== PERSONAGENS DO MÉTODO LUPA =====
 const classicCards = [
-    { id: 1, type: 'emoji', value: '🦁', label: 'Leão' },
-    { id: 2, type: 'emoji', value: '🐘', label: 'Elefante' },
-    { id: 3, type: 'emoji', value: '🦋', label: 'Borboleta' },
-    { id: 4, type: 'emoji', value: '🐢', label: 'Tartaruga' },
-    { id: 5, type: 'emoji', value: '🦊', label: 'Raposa' },
-    { id: 6, type: 'emoji', value: '🐙', label: 'Polvo' },
-    { id: 7, type: 'emoji', value: '🦜', label: 'Papagaio' },
-    { id: 8, type: 'emoji', value: '🐬', label: 'Golfinho' },
+    { id: 1, type: 'image', value: 'images/leao.png', label: 'Leao' },
+    { id: 2, type: 'image', value: 'images/lobo.png', label: 'Lobo' },
+    { id: 3, type: 'image', value: 'images/cobra.png', label: 'Cobra' },
+    { id: 4, type: 'image', value: 'images/mosquito.png', label: 'Mosquito' },
+    { id: 5, type: 'image', value: 'images/bajo.png', label: 'Bajo' },
+    { id: 6, type: 'image', value: 'images/tina.png', label: 'Tina' },
+    { id: 7, type: 'image', value: 'images/panda.png', label: 'Panda' },
+    { id: 8, type: 'image', value: 'images/coruja.png', label: 'Coruja' },
+    { id: 9, type: 'image', value: 'images/leco.png', label: 'Leco' },
+    { id: 10, type: 'image', value: 'images/arara.png', label: 'Arara' },
 ];
 
-// MODO QUIZ: Perguntas e respostas (formam pares)
+// MODO QUIZ: Perguntas e respostas sobre o Método Lupa
 const quizCards = [
-    { id: 1, question: 'Qual planeta é conhecido como planeta vermelho?', answer: 'Marte' },
-    { id: 2, question: 'Quantas patas tem uma aranha?', answer: '8 patas' },
-    { id: 3, question: 'Qual o maior oceano do mundo?', answer: 'Oceano Pacífico' },
-    { id: 4, question: 'De que cor são as folhas das árvores?', answer: 'Verdes' },
-    { id: 5, question: 'Qual animal é o rei da selva?', answer: 'Leão' },
-    { id: 6, question: 'Quantos dias tem uma semana?', answer: '7 dias' },
-    { id: 7, question: 'Onde vive o peixe?', answer: 'Na água' },
-    { id: 8, question: 'Qual é o maior animal do mundo?', answer: 'Baleia azul' },
+    { id: 1, question: 'O que o Mapa representa?', answer: 'Mostra o caminho certo a seguir na jornada' },
+    { id: 2, question: 'O que a Bussola faz?', answer: 'Aponta a direcao, ajudando a nao se perder' },
+    { id: 3, question: 'Para que serve o Pao e a agua?', answer: 'Da forca e energia para continuar' },
+    { id: 4, question: 'Quem e o Lobo na jornada?', answer: 'E o inimigo que tenta nos desviar do caminho' },
+    { id: 5, question: 'O que a Lupa nos ajuda a fazer?', answer: 'Ver de perto o que ha em nosso coracao' },
+    { id: 6, question: 'Pensamento saudavel gera o que?', answer: 'Um sentimento saudavel' },
+    { id: 7, question: 'Sentimento saudavel gera o que?', answer: 'Uma comunicacao saudavel' },
+    { id: 8, question: 'Comunicacao saudavel gera o que?', answer: 'Uma atitude saudavel' },
+    { id: 9, question: 'Qual o nome do rinoceronte?', answer: 'Bajo' },
+    { id: 10, question: 'Qual o nome da girafa?', answer: 'Tina' },
 ];
 
 // ===== NAVIGATION =====
 function showScreen(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    const screen = document.getElementById(id);
+    document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+    var screen = document.getElementById(id);
     screen.classList.add('active');
-    // Re-trigger animation
     screen.style.animation = 'none';
-    screen.offsetHeight; // force reflow
+    screen.offsetHeight;
     screen.style.animation = '';
 }
 
@@ -55,13 +55,13 @@ function goHome() {
 
 function startClassicMode() {
     gameMode = 'classic';
-    document.getElementById('difficulty-title').textContent = 'Jogo da Memória';
+    document.getElementById('difficulty-title').textContent = 'Jogo da Memoria';
     showScreen('screen-difficulty');
 }
 
 function startQuizMode() {
     gameMode = 'quiz';
-    document.getElementById('difficulty-title').textContent = 'Memória Quiz';
+    document.getElementById('difficulty-title').textContent = 'Memoria Quiz';
     showScreen('screen-difficulty');
 }
 
@@ -72,7 +72,7 @@ function selectDifficulty(diff) {
 
 // ===== GAME INIT =====
 function initGame() {
-    const pairsMap = { easy: 4, medium: 6, hard: 8 };
+    var pairsMap = { easy: 4, medium: 6, hard: 8 };
     totalPairs = pairsMap[difficulty];
     matchedPairs = 0;
     moves = 0;
@@ -94,21 +94,24 @@ function initGame() {
 }
 
 function setupClassicBoard() {
-    const selected = classicCards.slice(0, totalPairs);
-    // Create pairs
+    var shuffled = classicCards.slice();
+    shuffle(shuffled);
+    var selected = shuffled.slice(0, totalPairs);
     cards = [];
-    selected.forEach(card => {
-        cards.push({ ...card, uid: card.id + '-a', pairId: card.id });
-        cards.push({ ...card, uid: card.id + '-b', pairId: card.id });
+    selected.forEach(function(card) {
+        cards.push({ id: card.id, type: card.type, value: card.value, label: card.label, uid: card.id + '-a', pairId: card.id });
+        cards.push({ id: card.id, type: card.type, value: card.value, label: card.label, uid: card.id + '-b', pairId: card.id });
     });
     shuffle(cards);
     renderBoard();
 }
 
 function setupQuizBoard() {
-    const selected = quizCards.slice(0, totalPairs);
+    var shuffled = quizCards.slice();
+    shuffle(shuffled);
+    var selected = shuffled.slice(0, totalPairs);
     cards = [];
-    selected.forEach(q => {
+    selected.forEach(function(q) {
         cards.push({
             uid: q.id + '-q',
             pairId: q.id,
@@ -127,58 +130,41 @@ function setupQuizBoard() {
 }
 
 function renderBoard() {
-    const board = document.getElementById('game-board');
+    var board = document.getElementById('game-board');
     board.innerHTML = '';
+    board.className = 'game-board cols-4';
 
-    // Determine grid columns
-    const total = cards.length;
-    board.className = 'game-board';
-    if (total <= 8) {
-        board.classList.add('cols-4');
-    } else if (total <= 12) {
-        board.classList.add('cols-4');
-    } else {
-        board.classList.add('cols-4');
-    }
+    var lupaSvg = '<svg class="card-back-icon" viewBox="0 0 40 40"><circle cx="17" cy="17" r="11" fill="none" stroke="#5a3e28" stroke-width="3"/><line x1="25" y1="25" x2="36" y2="36" stroke="#5a3e28" stroke-width="3" stroke-linecap="round"/></svg>';
 
-    cards.forEach((card, index) => {
-        const el = document.createElement('div');
+    cards.forEach(function(card, index) {
+        var el = document.createElement('div');
         el.className = 'card';
         el.dataset.index = index;
 
-        let frontContent = '';
+        var frontContent = '';
 
         if (gameMode === 'classic') {
-            if (card.type === 'image') {
-                frontContent = `
-                    <div class="card-front">
-                        <img src="${sanitizeAttr(card.value)}" alt="${sanitizeAttr(card.label)}">
-                        <span class="card-label">${sanitize(card.label)}</span>
-                    </div>`;
-            } else {
-                frontContent = `
-                    <div class="card-front">
-                        <span class="card-emoji">${card.value}</span>
-                        <span class="card-label">${sanitize(card.label)}</span>
-                    </div>`;
-            }
+            frontContent =
+                '<div class="card-front">' +
+                    '<img src="' + sanitizeAttr(card.value) + '" alt="' + sanitizeAttr(card.label) + '">' +
+                    '<span class="card-label">' + sanitize(card.label) + '</span>' +
+                '</div>';
         } else {
-            const isAnswer = card.type === 'quiz-answer';
-            frontContent = `
-                <div class="card-front quiz-card ${isAnswer ? 'quiz-answer' : ''}">
-                    <span class="card-quiz-text">${sanitize(card.text)}</span>
-                </div>`;
+            var isAnswer = card.type === 'quiz-answer';
+            var cssClass = isAnswer ? 'quiz-answer' : 'quiz-question';
+            frontContent =
+                '<div class="card-front quiz-card ' + cssClass + '">' +
+                    '<span class="card-quiz-text">' + sanitize(card.text) + '</span>' +
+                '</div>';
         }
 
-        el.innerHTML = `
-            <div class="card-inner">
-                <div class="card-back">
-                    <span class="card-back-pattern">?</span>
-                </div>
-                ${frontContent}
-            </div>`;
+        el.innerHTML =
+            '<div class="card-inner">' +
+                '<div class="card-back">' + lupaSvg + '</div>' +
+                frontContent +
+            '</div>';
 
-        el.addEventListener('click', () => flipCard(index, el));
+        el.addEventListener('click', function() { flipCard(index, el); });
         board.appendChild(el);
     });
 }
@@ -190,7 +176,7 @@ function flipCard(index, el) {
     if (flippedCards.length >= 2) return;
 
     el.classList.add('flipped');
-    flippedCards.push({ index, el, card: cards[index] });
+    flippedCards.push({ index: index, el: el, card: cards[index] });
 
     if (flippedCards.length === 2) {
         moves++;
@@ -200,8 +186,9 @@ function flipCard(index, el) {
 }
 
 function checkMatch() {
-    const [first, second] = flippedCards;
-    const isMatch = first.card.pairId === second.card.pairId;
+    var first = flippedCards[0];
+    var second = flippedCards[1];
+    var isMatch = first.card.pairId === second.card.pairId;
 
     if (isMatch) {
         first.el.classList.add('matched');
@@ -218,7 +205,7 @@ function checkMatch() {
         first.el.classList.add('wrong');
         second.el.classList.add('wrong');
 
-        setTimeout(() => {
+        setTimeout(function() {
             first.el.classList.remove('flipped', 'wrong');
             second.el.classList.remove('flipped', 'wrong');
             flippedCards = [];
@@ -229,7 +216,7 @@ function checkMatch() {
 
 // ===== TIMER =====
 function startTimer() {
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(function() {
         seconds++;
         document.getElementById('timer').textContent = formatTime(seconds);
     }, 1000);
@@ -241,15 +228,15 @@ function stopTimer() {
 }
 
 function formatTime(s) {
-    const m = Math.floor(s / 60).toString().padStart(2, '0');
-    const sec = (s % 60).toString().padStart(2, '0');
-    return `${m}:${sec}`;
+    var m = Math.floor(s / 60).toString().padStart(2, '0');
+    var sec = (s % 60).toString().padStart(2, '0');
+    return m + ':' + sec;
 }
 
 // ===== STATS =====
 function updateStats() {
     document.getElementById('moves-count').textContent = moves;
-    document.getElementById('pairs-count').textContent = `${matchedPairs}/${totalPairs}`;
+    document.getElementById('pairs-count').textContent = matchedPairs + '/' + totalPairs;
 }
 
 // ===== WIN =====
@@ -267,33 +254,37 @@ function restartGame() {
 
 // ===== CONFETTI =====
 function spawnConfetti() {
-    const colors = ['#f093fb', '#f5576c', '#4facfe', '#43e97b', '#fee140', '#00f2fe'];
-    for (let i = 0; i < 50; i++) {
-        setTimeout(() => {
-            const confetti = document.createElement('div');
-            confetti.className = 'confetti';
-            confetti.style.left = Math.random() * 100 + 'vw';
-            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            confetti.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
-            confetti.style.width = (Math.random() * 8 + 6) + 'px';
-            confetti.style.height = (Math.random() * 8 + 6) + 'px';
-            document.body.appendChild(confetti);
-            setTimeout(() => confetti.remove(), 4000);
-        }, i * 40);
+    var colors = ['#6ab04c', '#4a90d9', '#f4d03f', '#e67e22', '#c0392b', '#8B6914'];
+    for (var i = 0; i < 50; i++) {
+        (function(delay) {
+            setTimeout(function() {
+                var confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 2 + 1.5) + 's';
+                confetti.style.width = (Math.random() * 8 + 6) + 'px';
+                confetti.style.height = (Math.random() * 8 + 6) + 'px';
+                document.body.appendChild(confetti);
+                setTimeout(function() { confetti.remove(); }, 4000);
+            }, delay);
+        })(i * 40);
     }
 }
 
 // ===== UTILS =====
 function shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+    for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
     return arr;
 }
 
 function sanitize(str) {
-    const div = document.createElement('div');
+    var div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
 }
