@@ -3,9 +3,7 @@
 html,body{overflow-x:hidden}
 body{font-family:'Nunito',sans-serif;background:linear-gradient(180deg,var(--cc) 0%,var(--cm) 30%,var(--cs) 70%,#d4efdf 100%);min-height:100vh;min-height:100dvh;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none;position:relative;color:var(--t)}
 button{font-family:'Nunito',sans-serif;touch-action:manipulation}
-.palm-left,.palm-right{position:fixed;bottom:0;width:120px;height:200px;pointer-events:none;z-index:0;opacity:.85}
-.palm-left{left:-10px;background:radial-gradient(ellipse 60px 25px at 80px 60px,#2d8f4e 0%,transparent 100%),radial-gradient(ellipse 70px 20px at 60px 90px,#3aa55d 0%,transparent 100%),radial-gradient(ellipse 55px 22px at 90px 120px,#2d8f4e 0%,transparent 100%),radial-gradient(ellipse 65px 18px at 50px 150px,#3aa55d 0%,transparent 100%),radial-gradient(ellipse 50px 20px at 75px 170px,#2d8f4e 0%,transparent 100%)}
-.palm-right{right:-10px;background:radial-gradient(ellipse 60px 25px at 40px 60px,#2d8f4e 0%,transparent 100%),radial-gradient(ellipse 70px 20px at 60px 90px,#3aa55d 0%,transparent 100%),radial-gradient(ellipse 55px 22px at 30px 120px,#2d8f4e 0%,transparent 100%),radial-gradient(ellipse 65px 18px at 70px 150px,#3aa55d 0%,transparent 100%),radial-gradient(ellipse 50px 20px at 45px 170px,#2d8f4e 0%,transparent 100%)}
+.palm-left,.palm-right{display:none}
 .screen{display:none;min-height:100vh;min-height:100dvh;padding:20px;animation:fadeIn .4s ease;position:relative;z-index:1}
 .screen.active{display:flex;align-items:center;justify-content:center}
 @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
