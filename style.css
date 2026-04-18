@@ -391,7 +391,17 @@ button{font-family:'Nunito',sans-serif;touch-action:manipulation}
 .modal-content {
     max-width: 440px; width: 100%; text-align: center;
     animation: modalPop .4s cubic-bezier(.34,1.56,.64,1);
+    position: relative;
 }
+.modal-close-btn {
+    position: absolute; top: 10px; right: 14px;
+    background: none; border: none; font-size: 24px;
+    color: var(--m); cursor: pointer; font-weight: 700;
+    width: 36px; height: 36px; display: flex;
+    align-items: center; justify-content: center;
+    border-radius: 50%; transition: background .2s;
+}
+.modal-close-btn:active { background: rgba(90,62,40,.15); }
 @keyframes modalPop {
     from { transform: scale(.7); opacity: 0; }
     to { transform: scale(1); opacity: 1; }

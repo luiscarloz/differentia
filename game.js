@@ -555,6 +555,7 @@ function initTrailGame() {
     state.trailTotal = stepsMap[state.difficulty];
     state.trailIndex = 0;
     state.trailScore = 0;
+    state.trailQuit = false;
     var pool = trailChallenges.slice();
     shuffle(pool);
     state.trailSteps = pool.slice(0, state.trailTotal);
@@ -642,6 +643,7 @@ function generateTrailPositions(count) {
 }
 
 function showNextTrailChallenge() {
+    if (state.trailQuit) return;
     if (state.trailIndex >= state.trailTotal) {
         setTimeout(winTrailGame, 600);
         return;
@@ -683,6 +685,7 @@ function handleTrailAnswer(btn, isCorrect, correctOriginalIndex, opts) {
 }
 
 function advanceTrailPlayer() {
+    if (state.trailQuit) return;
     state.trailIndex++;
     var spots = document.querySelectorAll('.trail-spot');
     if (spots[state.trailIndex - 1]) {
@@ -706,6 +709,7 @@ function updateTrailStats() {
 }
 
 function quitTrail() {
+    state.trailQuit = true;
     document.getElementById('trail-modal').classList.remove('active');
     var answered = state.trailIndex;
     if (answered === 0) { goHome(); return; }
