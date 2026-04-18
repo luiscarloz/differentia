@@ -90,7 +90,18 @@ var trailChallenges = [
     { q: 'Sentimento saudável gera...', opts: ['Comunicação saudável', 'Silêncio'], correct: 0 },
     { q: 'Bajo é um...', opts: ['Pássaro', 'Rinoceronte'], correct: 1 },
     { q: 'Tina é uma...', opts: ['Girafa', 'Cobra'], correct: 0 },
-    { q: 'Leco é um...', opts: ['Macaco', 'Leão'], correct: 0 }
+    { q: 'Leco é um...', opts: ['Macaco', 'Leão'], correct: 0 },
+    { q: 'A Coruja representa...', opts: ['Sabedoria', 'Preguiça'], correct: 0 },
+    { q: 'O que é um coração saudável?', opts: ['Cheio de virtudes', 'Cheio de medo'], correct: 0 },
+    { q: 'Atitude saudável vem de...', opts: ['Comunicação saudável', 'Raiva'], correct: 0 },
+    { q: 'O tesouro escondido está...', opts: ['Dentro de nós', 'No fundo do mar'], correct: 0 },
+    { q: 'A Arara é de que cor?', opts: ['Azul', 'Vermelha'], correct: 0 },
+    { q: 'Quem é o Panda?', opts: ['Um amigo da jornada', 'O vilão'], correct: 0 },
+    { q: 'Bondade é uma...', opts: ['Virtude', 'Fraqueza'], correct: 0 },
+    { q: 'O Mosquito representa...', opts: ['Algo que incomoda', 'Algo bonito'], correct: 0 },
+    { q: 'Generosidade significa...', opts: ['Compartilhar com outros', 'Guardar tudo'], correct: 0 },
+    { q: 'Paciência é importante para...', opts: ['Crescer bem', 'Ficar parado'], correct: 0 },
+    { q: 'Domínio próprio é...', opts: ['Controlar nossas atitudes', 'Mandar nos outros'], correct: 0 }
 ];
 
 // ============================================================
@@ -692,6 +703,16 @@ function advanceTrailPlayer() {
 function updateTrailStats() {
     document.getElementById('trail-position').textContent = state.trailIndex + '/' + state.trailTotal;
     document.getElementById('trail-stars').textContent = state.trailScore;
+}
+
+function quitTrail() {
+    document.getElementById('trail-modal').classList.remove('active');
+    var answered = state.trailIndex;
+    if (answered === 0) { goHome(); return; }
+    var pct = Math.round((state.trailScore / answered) * 100);
+    var msg = 'Você respondeu ' + answered + ' de ' + state.trailTotal + ' perguntas.';
+    var stats = '<p>Acertos: <strong>' + state.trailScore + '/' + answered + '</strong></p><p>Aproveitamento: <strong>' + pct + '%</strong></p>';
+    showWinScreen('Jogo Encerrado', msg, stats, pct >= 50);
 }
 
 function winTrailGame() {

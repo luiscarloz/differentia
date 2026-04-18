@@ -365,6 +365,13 @@ button{font-family:'Nunito',sans-serif;touch-action:manipulation}
     width: 62px; height: 62px; font-size: 24px;
 }
 .trail-advance-btn { width: 100%; }
+.btn-trail-quit {
+    background: transparent; color: var(--m); border: 2px solid rgba(90,62,40,.25);
+    font-size: .85rem; padding: 10px 16px; width: 100%;
+    border-radius: 12px; cursor: pointer; font-family: 'Nunito', sans-serif;
+}
+.btn-trail-quit .btn-text { font-family: 'Nunito', sans-serif; font-size: .85rem; font-weight: 700; }
+.btn-trail-quit:active { background: rgba(90,62,40,.1); }
 .trail-advance-btn.disabled {
     opacity: .5; pointer-events: none; filter: grayscale(.5);
 }
