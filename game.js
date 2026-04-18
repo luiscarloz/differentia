@@ -271,11 +271,15 @@ function checkMemoryMatch() {
             first.el.classList.add('wrong');
             second.el.classList.add('wrong');
             setTimeout(function() {
-                first.el.classList.remove('flipped', 'wrong');
-                second.el.classList.remove('flipped', 'wrong');
-                state.flippedCards = [];
-                state.isLocked = false;
-            }, 800);
+                first.el.classList.remove('wrong');
+                second.el.classList.remove('wrong');
+                setTimeout(function() {
+                    first.el.classList.remove('flipped');
+                    second.el.classList.remove('flipped');
+                    state.flippedCards = [];
+                    state.isLocked = false;
+                }, 400);
+            }, 500);
         }, 550);
     }
 }
