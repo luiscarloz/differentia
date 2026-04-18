@@ -48,7 +48,7 @@
                         <rect x="22" y="22" width="11" height="11" rx="2" fill="#8B6914"/>
                     </svg>
                 </div>
-                <span class="game-card-title">Memoria</span>
+                <span class="game-card-title">Memória</span>
                 <span class="game-card-desc">Encontre os pares</span>
             </button>
 
@@ -59,7 +59,7 @@
                         <text x="20" y="27" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Fredoka One">?</text>
                     </svg>
                 </div>
-                <span class="game-card-title">Memoria Quiz</span>
+                <span class="game-card-title">Memória Quiz</span>
                 <span class="game-card-desc">Pergunta e resposta</span>
             </button>
 
@@ -89,7 +89,7 @@
                         <circle cx="9" cy="29" r="3" fill="none" stroke="#c0392b" stroke-width="2"/>
                     </svg>
                 </div>
-                <span class="game-card-title">Caca-Palavras</span>
+                <span class="game-card-title">Caça-Palavras</span>
                 <span class="game-card-desc">Ache os personagens</span>
             </button>
 
@@ -109,7 +109,7 @@
         </div>
 
         <footer class="home-footer">
-            <p>Metodo Lupa &bull; differentia.world</p>
+            <p>Método Lupa &bull; differentia.world</p>
             <a href="https://wa.me/5561984188926?text=Ola%2C%20gostaria%20de%20conhecer%20seus%20servicos" class="powered-by" target="_blank" rel="noopener">powered by Logostech.co</a>
         </footer>
     </div>
@@ -127,21 +127,21 @@
                 <button class="btn btn-easy" onclick="selectDifficulty('easy')">
                     <span class="diff-stars">&#9733;</span>
                     <div class="btn-content">
-                        <span class="btn-text">Facil</span>
+                        <span class="btn-text">Fácil</span>
                         <span class="btn-desc" id="diff-easy-desc">4 pares</span>
                     </div>
                 </button>
                 <button class="btn btn-medium" onclick="selectDifficulty('medium')">
                     <span class="diff-stars">&#9733;&#9733;</span>
                     <div class="btn-content">
-                        <span class="btn-text">Medio</span>
+                        <span class="btn-text">Médio</span>
                         <span class="btn-desc" id="diff-medium-desc">6 pares</span>
                     </div>
                 </button>
                 <button class="btn btn-hard" onclick="selectDifficulty('hard')">
                     <span class="diff-stars">&#9733;&#9733;&#9733;</span>
                     <div class="btn-content">
-                        <span class="btn-text">Dificil</span>
+                        <span class="btn-text">Difícil</span>
                         <span class="btn-desc" id="diff-hard-desc">8 pares</span>
                     </div>
                 </button>
@@ -150,7 +150,7 @@
     </div>
 </div>
 
-<!-- ===== TELA DO JOGO DE MEMORIA ===== -->
+<!-- ===== TELA DO JOGO DE MEMÓRIA ===== -->
 <div id="screen-game" class="screen">
     <div class="game-header">
         <button class="btn-back" onclick="goHome()">&#8592; Menu</button>
@@ -163,7 +163,7 @@
     <div class="game-board" id="game-board"></div>
 </div>
 
-<!-- ===== TELA DE VITORIA (memoria) ===== -->
+<!-- ===== TELA DE VITÓRIA (memória) ===== -->
 <div id="screen-win" class="screen">
     <div class="palm-left"></div>
     <div class="palm-right"></div>
@@ -181,8 +181,8 @@
                 <ellipse cx="72" cy="22" rx="6" ry="5" fill="#f7dc6f"/>
             </svg>
         </div>
-        <h2 class="win-title" id="win-title">Parabens!</h2>
-        <p class="win-subtitle" id="win-subtitle">Voce encontrou todos os pares!</p>
+        <h2 class="win-title" id="win-title">Parabéns!</h2>
+        <p class="win-subtitle" id="win-subtitle">Você encontrou todos os pares!</p>
         <div class="parchment-card win-stats-card">
             <div class="win-stats" id="win-stats">
                 <p>Jogadas: <strong id="win-moves">0</strong></p>
@@ -226,7 +226,7 @@
         <div class="parchment-card win-stats-card">
             <div class="win-stats">
                 <p>Acertos: <strong id="sq-final-score">0/10</strong></p>
-                <p>Pontuacao: <strong id="sq-final-percent">0%</strong></p>
+                <p>Pontuação: <strong id="sq-final-percent">0%</strong></p>
             </div>
         </div>
         <div class="win-buttons">
@@ -236,7 +236,7 @@
     </div>
 </div>
 
-<!-- ===== CACA-PALAVRAS ===== -->
+<!-- ===== CAÇA-PALAVRAS ===== -->
 <div id="screen-wordsearch" class="screen">
     <div class="game-header">
         <button class="btn-back" onclick="goHome()">&#8592; Menu</button>
@@ -246,7 +246,7 @@
         </div>
     </div>
     <div class="wordsearch-container">
-        <p class="ws-instruction">Toque na <strong>primeira letra</strong> e depois na <strong>ultima letra</strong> da palavra para encontra-la!</p>
+        <p class="ws-instruction">Toque na <strong>primeira letra</strong> e depois na <strong>última letra</strong> da palavra para encontrá-la!</p>
         <div class="wordsearch-grid" id="ws-grid"></div>
         <div class="wordsearch-words" id="ws-words"></div>
     </div>
@@ -257,13 +257,13 @@
     <div class="game-header">
         <button class="btn-back" onclick="goHome()">&#8592; Menu</button>
         <div class="game-stats">
-            <div class="stat"><span class="stat-label">Posicao</span><span class="stat-value" id="trail-position">1/12</span></div>
+            <div class="stat"><span class="stat-label">Posição</span><span class="stat-value" id="trail-position">1/12</span></div>
             <div class="stat"><span class="stat-label">Estrelas</span><span class="stat-value" id="trail-stars">0</span></div>
         </div>
     </div>
     <div class="trail-container">
         <div class="trail-map" id="trail-map"></div>
-        <button class="btn btn-adventure trail-advance-btn" id="trail-advance-btn" onclick="advanceTrail()"><div class="btn-content"><span class="btn-text">Avancar</span></div></button>
+        <button class="btn btn-adventure trail-advance-btn" id="trail-advance-btn" onclick="advanceTrail()"><div class="btn-content"><span class="btn-text">Avançar</span></div></button>
     </div>
 </div>
 
@@ -276,24 +276,24 @@
     </div>
 </div>
 
-<!-- ===== SEQUENCIA ===== -->
+<!-- ===== SEQUÊNCIA ===== -->
 <div id="screen-sequence" class="screen">
     <div class="game-header">
         <button class="btn-back" onclick="goHome()">&#8592; Menu</button>
         <div class="game-stats">
-            <div class="stat"><span class="stat-label">Cenario</span><span class="stat-value" id="seq-progress">1/4</span></div>
+            <div class="stat"><span class="stat-label">Cenário</span><span class="stat-value" id="seq-progress">1/4</span></div>
             <div class="stat"><span class="stat-label">Estrelas</span><span class="stat-value" id="seq-stars">0</span></div>
         </div>
     </div>
     <div class="sequence-container">
         <div class="parchment-card sequence-scenario-card">
-            <p class="sequence-label">Cenario</p>
+            <p class="sequence-label">Cenário</p>
             <p class="sequence-scenario" id="seq-scenario"></p>
         </div>
-        <p class="sequence-instruction">Toque em ordem: do primeiro ao ultimo</p>
+        <p class="sequence-instruction">Toque em ordem: do primeiro ao último</p>
         <div class="sequence-slots" id="seq-slots"></div>
         <div class="sequence-pool" id="seq-pool"></div>
-        <button class="btn btn-quest sequence-reset" onclick="resetSequence()">Recomecar</button>
+        <button class="btn btn-quest sequence-reset" onclick="resetSequence()">Recomeçar</button>
     </div>
 </div>
 

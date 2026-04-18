@@ -1,5 +1,5 @@
 /* ============================================================
-   DIFFERENTIA - Jogos Educativos (Metodo Lupa)
+   DIFFERENTIA - Jogos Educativos (Método Lupa)
    ============================================================ */
 
 var state = {
@@ -33,7 +33,7 @@ var state = {
 // DADOS DO LIVRO
 // ============================================================
 var classicCards = [
-    { id: 1, value: 'images/leao.png', label: 'Leao' },
+    { id: 1, value: 'images/leao.png', label: 'Leão' },
     { id: 2, value: 'images/lobo.png', label: 'Lobo' },
     { id: 3, value: 'images/cobra.png', label: 'Cobra' },
     { id: 4, value: 'images/mosquito.png', label: 'Mosquito' },
@@ -47,26 +47,26 @@ var classicCards = [
 
 var quizCards = [
     { id: 1, question: 'O que o Mapa representa?', answer: 'Mostra o caminho certo a seguir na jornada' },
-    { id: 2, question: 'O que a Bussola faz?', answer: 'Aponta a direcao, ajudando a nao se perder' },
-    { id: 3, question: 'Para que serve o Pao e a agua?', answer: 'Da forca e energia para continuar' },
-    { id: 4, question: 'Quem e o Lobo na jornada?', answer: 'E o inimigo que tenta nos desviar do caminho' },
-    { id: 5, question: 'O que a Lupa nos ajuda a fazer?', answer: 'Ver de perto o que ha em nosso coracao' },
-    { id: 6, question: 'Pensamento saudavel gera o que?', answer: 'Um sentimento saudavel' },
-    { id: 7, question: 'Sentimento saudavel gera o que?', answer: 'Uma comunicacao saudavel' },
-    { id: 8, question: 'Comunicacao saudavel gera o que?', answer: 'Uma atitude saudavel' },
+    { id: 2, question: 'O que a Bússola faz?', answer: 'Aponta a direção, ajudando a não se perder' },
+    { id: 3, question: 'Para que serve o Pão e a água?', answer: 'Dá força e energia para continuar' },
+    { id: 4, question: 'Quem é o Lobo na jornada?', answer: 'É o inimigo que tenta nos desviar do caminho' },
+    { id: 5, question: 'O que a Lupa nos ajuda a fazer?', answer: 'Ver de perto o que há em nosso coração' },
+    { id: 6, question: 'Pensamento saudável gera o que?', answer: 'Um sentimento saudável' },
+    { id: 7, question: 'Sentimento saudável gera o que?', answer: 'Uma comunicação saudável' },
+    { id: 8, question: 'Comunicação saudável gera o que?', answer: 'Uma atitude saudável' },
     { id: 9, question: 'Qual o nome do rinoceronte?', answer: 'Bajo' },
     { id: 10, question: 'Qual o nome da girafa?', answer: 'Tina' }
 ];
 
 var quickQuizQuestions = [
     { q: 'O que o Mapa representa na jornada?', options: ['O caminho certo a seguir', 'Um lugar distante', 'Um livro de receitas', 'Um tesouro escondido'], correct: 0 },
-    { q: 'Para que serve a Bussola?', options: ['Para cozinhar', 'Para apontar a direcao', 'Para acender fogo', 'Para contar historias'], correct: 1 },
-    { q: 'O Pao e a Agua nos dao o que?', options: ['Sono', 'Medo', 'Forca e energia', 'Risadas'], correct: 2 },
-    { q: 'Quem e o Lobo na jornada?', options: ['Um amigo fiel', 'Um professor', 'O inimigo que tenta desviar', 'Um guia'], correct: 2 },
-    { q: 'A Lupa nos ajuda a ver o que?', options: ['Estrelas no ceu', 'O coracao de perto', 'Letras pequenas', 'Animais distantes'], correct: 1 },
-    { q: 'Pensamento saudavel gera o que?', options: ['Sono', 'Sentimento saudavel', 'Fome', 'Chuva'], correct: 1 },
-    { q: 'Sentimento saudavel gera o que?', options: ['Comunicacao saudavel', 'Silencio', 'Raiva', 'Cansaco'], correct: 0 },
-    { q: 'Comunicacao saudavel gera o que?', options: ['Briga', 'Atitude saudavel', 'Tristeza', 'Medo'], correct: 1 },
+    { q: 'Para que serve a Bússola?', options: ['Para cozinhar', 'Para apontar a direção', 'Para acender fogo', 'Para contar histórias'], correct: 1 },
+    { q: 'O Pão e a Água nos dão o que?', options: ['Sono', 'Medo', 'Força e energia', 'Risadas'], correct: 2 },
+    { q: 'Quem é o Lobo na jornada?', options: ['Um amigo fiel', 'Um professor', 'O inimigo que tenta desviar', 'Um guia'], correct: 2 },
+    { q: 'A Lupa nos ajuda a ver o que?', options: ['Estrelas no céu', 'O coração de perto', 'Letras pequenas', 'Animais distantes'], correct: 1 },
+    { q: 'Pensamento saudável gera o que?', options: ['Sono', 'Sentimento saudável', 'Fome', 'Chuva'], correct: 1 },
+    { q: 'Sentimento saudável gera o que?', options: ['Comunicação saudável', 'Silêncio', 'Raiva', 'Cansaço'], correct: 0 },
+    { q: 'Comunicação saudável gera o que?', options: ['Briga', 'Atitude saudável', 'Tristeza', 'Medo'], correct: 1 },
     { q: 'Qual o nome do rinoceronte?', options: ['Leco', 'Tina', 'Bajo', 'Panda'], correct: 2 },
     { q: 'Qual o nome da girafa?', options: ['Tina', 'Bajo', 'Leco', 'Coruja'], correct: 0 }
 ];
@@ -78,23 +78,23 @@ var wordSearchBank = {
 };
 
 var trailChallenges = [
-    { q: 'Pensamento saudavel gera...', opts: ['Sentimento saudavel', 'Medo'], correct: 0 },
+    { q: 'Pensamento saudável gera...', opts: ['Sentimento saudável', 'Medo'], correct: 0 },
     { q: 'Quem tenta nos desviar do caminho?', opts: ['Lobo', 'Tina'], correct: 0 },
-    { q: 'A Bussola serve para...', opts: ['Dormir', 'Apontar direcao'], correct: 1 },
-    { q: 'A Lupa nos ajuda a ver...', opts: ['TV', 'Nosso coracao'], correct: 1 },
+    { q: 'A Bússola serve para...', opts: ['Dormir', 'Apontar direção'], correct: 1 },
+    { q: 'A Lupa nos ajuda a ver...', opts: ['TV', 'Nosso coração'], correct: 1 },
     { q: 'O Mapa mostra...', opts: ['Caminho certo', 'Nada'], correct: 0 },
-    { q: 'O Pao e a Agua dao...', opts: ['Forca', 'Sono'], correct: 0 },
+    { q: 'O Pão e a Água dão...', opts: ['Força', 'Sono'], correct: 0 },
     { q: 'Nome do rinoceronte?', opts: ['Leco', 'Bajo'], correct: 1 },
     { q: 'Nome da girafa?', opts: ['Tina', 'Cobra'], correct: 0 },
-    { q: 'Comunicacao saudavel gera...', opts: ['Atitude saudavel', 'Briga'], correct: 0 },
-    { q: 'Sentimento saudavel gera...', opts: ['Comunicacao saudavel', 'Silencio'], correct: 0 },
-    { q: 'Bajo e um...', opts: ['Passaro', 'Rinoceronte'], correct: 1 },
-    { q: 'Tina e uma...', opts: ['Girafa', 'Cobra'], correct: 0 },
-    { q: 'Leco e um...', opts: ['Macaco', 'Leao'], correct: 0 }
+    { q: 'Comunicação saudável gera...', opts: ['Atitude saudável', 'Briga'], correct: 0 },
+    { q: 'Sentimento saudável gera...', opts: ['Comunicação saudável', 'Silêncio'], correct: 0 },
+    { q: 'Bajo é um...', opts: ['Pássaro', 'Rinoceronte'], correct: 1 },
+    { q: 'Tina é uma...', opts: ['Girafa', 'Cobra'], correct: 0 },
+    { q: 'Leco é um...', opts: ['Macaco', 'Leão'], correct: 0 }
 ];
 
 // ============================================================
-// NAVEGACAO
+// NAVEGAÇÃO
 // ============================================================
 function showScreen(id) {
     document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
@@ -112,16 +112,16 @@ function startGame(mode) {
     state.gameMode = mode;
     if (mode === 'memory') {
         setDifficultyDescriptions('4 pares', '6 pares', '8 pares');
-        document.getElementById('difficulty-title').textContent = 'Jogo da Memoria';
+        document.getElementById('difficulty-title').textContent = 'Jogo da Memória';
     } else if (mode === 'memquiz') {
         setDifficultyDescriptions('4 pares', '6 pares', '8 pares');
-        document.getElementById('difficulty-title').textContent = 'Memoria Quiz';
+        document.getElementById('difficulty-title').textContent = 'Memória Quiz';
     } else if (mode === 'quiz') {
         setDifficultyDescriptions('5 perguntas', '8 perguntas', '10 perguntas');
-        document.getElementById('difficulty-title').textContent = 'Quiz Rapido';
+        document.getElementById('difficulty-title').textContent = 'Quiz Rápido';
     } else if (mode === 'wordsearch') {
         setDifficultyDescriptions('4 palavras', '6 palavras', '8 palavras');
-        document.getElementById('difficulty-title').textContent = 'Caca-Palavras';
+        document.getElementById('difficulty-title').textContent = 'Caça-Palavras';
     } else if (mode === 'trail') {
         setDifficultyDescriptions('5 passos', '8 passos', '12 passos');
         document.getElementById('difficulty-title').textContent = 'Trilha das Descobertas';
@@ -157,7 +157,7 @@ function initCurrentGame() {
 function restartGame() { initCurrentGame(); }
 
 // ============================================================
-// MEMORIA
+// MEMÓRIA
 // ============================================================
 function initMemoryGame() {
     var pairsMap = { easy: 4, medium: 6, hard: 8 };
@@ -244,23 +244,28 @@ function flipCard(index, el) {
 function checkMemoryMatch() {
     var first = state.flippedCards[0];
     var second = state.flippedCards[1];
+    state.isLocked = true;
     if (first.card.pairId === second.card.pairId) {
-        first.el.classList.add('matched');
-        second.el.classList.add('matched');
-        state.matchedPairs++;
-        updateMemoryStats();
-        state.flippedCards = [];
-        if (state.matchedPairs === state.totalPairs) setTimeout(winMemoryGame, 600);
-    } else {
-        state.isLocked = true;
-        first.el.classList.add('wrong');
-        second.el.classList.add('wrong');
         setTimeout(function() {
-            first.el.classList.remove('flipped', 'wrong');
-            second.el.classList.remove('flipped', 'wrong');
+            first.el.classList.add('matched');
+            second.el.classList.add('matched');
+            state.matchedPairs++;
+            updateMemoryStats();
             state.flippedCards = [];
             state.isLocked = false;
-        }, 900);
+            if (state.matchedPairs === state.totalPairs) setTimeout(winMemoryGame, 400);
+        }, 550);
+    } else {
+        setTimeout(function() {
+            first.el.classList.add('wrong');
+            second.el.classList.add('wrong');
+            setTimeout(function() {
+                first.el.classList.remove('flipped', 'wrong');
+                second.el.classList.remove('flipped', 'wrong');
+                state.flippedCards = [];
+                state.isLocked = false;
+            }, 800);
+        }, 550);
     }
 }
 
@@ -272,11 +277,11 @@ function updateMemoryStats() {
 function winMemoryGame() {
     stopTimer();
     var stats = '<p>Jogadas: <strong>' + state.moves + '</strong></p><p>Tempo: <strong>' + formatTime(state.seconds) + '</strong></p>';
-    showWinScreen('Parabens!', 'Voce encontrou todos os pares!', stats);
+    showWinScreen('Parabéns!', 'Você encontrou todos os pares!', stats);
 }
 
 // ============================================================
-// QUIZ RAPIDO
+// QUIZ RÁPIDO
 // ============================================================
 function initQuizGame() {
     var countMap = { easy: 5, medium: 8, hard: 10 };
@@ -337,16 +342,16 @@ function handleQuizAnswer(btn, isCorrect, correctOriginalIndex, indexedOptions) 
 function winQuizGame() {
     var pct = Math.round((state.quizScore / state.quizTotal) * 100);
     var msg = '';
-    if (pct === 100) msg = 'Perfeito! Voce e um verdadeiro explorador!';
-    else if (pct >= 70) msg = 'Muito bem! Voce aprendeu muito!';
+    if (pct === 100) msg = 'Perfeito! Você é um verdadeiro explorador!';
+    else if (pct >= 70) msg = 'Muito bem! Você aprendeu muito!';
     else if (pct >= 50) msg = 'Bom trabalho! Continue explorando!';
-    else msg = 'Vamos tentar de novo? Voce consegue!';
+    else msg = 'Vamos tentar de novo? Você consegue!';
     var stats = '<p>Acertos: <strong>' + state.quizScore + '/' + state.quizTotal + '</strong></p><p>Aproveitamento: <strong>' + pct + '%</strong></p>';
     showWinScreen('Quiz Completo!', msg, stats, pct >= 50);
 }
 
 // ============================================================
-// CACA-PALAVRAS
+// CAÇA-PALAVRAS
 // ============================================================
 function initWordSearchGame() {
     var sizeMap = { easy: 7, medium: 9, hard: 11 };
@@ -528,7 +533,7 @@ function updateWordSearchStats() {
 function winWordSearchGame() {
     stopTimer();
     var stats = '<p>Palavras encontradas: <strong>' + state.wsFound + '/' + state.wsWords.length + '</strong></p><p>Tempo: <strong>' + formatTime(state.seconds) + '</strong></p>';
-    showWinScreen('Caca-Palavras Concluido!', 'Voce achou todas as palavras!', stats);
+    showWinScreen('Caça-Palavras Concluído!', 'Você achou todas as palavras!', stats);
 }
 
 // ============================================================
@@ -692,9 +697,9 @@ function updateTrailStats() {
 function winTrailGame() {
     var pct = Math.round((state.trailScore / state.trailTotal) * 100);
     var msg = '';
-    if (pct === 100) msg = 'Voce chegou ao tesouro sem errar nenhum passo!';
-    else if (pct >= 70) msg = 'Voce chegou ao tesouro! Muito bem!';
-    else msg = 'Voce chegou ao tesouro! Continue praticando!';
+    if (pct === 100) msg = 'Você chegou ao tesouro sem errar nenhum passo!';
+    else if (pct >= 70) msg = 'Você chegou ao tesouro! Muito bem!';
+    else msg = 'Você chegou ao tesouro! Continue praticando!';
     var stats = '<p>Passos: <strong>' + state.trailTotal + '</strong></p><p>Acertos: <strong>' + state.trailScore + '/' + state.trailTotal + '</strong></p>';
     showWinScreen('Tesouro Encontrado!', msg, stats);
 }
@@ -727,7 +732,7 @@ function formatTime(s) {
 }
 
 // ============================================================
-// VITORIA
+// VITÓRIA
 // ============================================================
 function showWinScreen(title, subtitle, statsHtml, withConfetti) {
     document.getElementById('win-title').textContent = title;
@@ -797,7 +802,7 @@ function startSuperQuiz() { startGame('quiz'); }
 function startWordSearch() { startGame('wordsearch'); }
 function startTrail() { startGame('trail'); }
 function startSequence() {
-    alert('Jogo "Sequencia" em construcao. Disponivel nas proximas versoes.');
+    alert('Jogo "Sequência" em construção. Disponível nas próximas versões.');
 }
 function advanceTrail() { advanceTrailPlayer(); }
 function resetSequence() { /* placeholder until sequence game is implemented */ }
