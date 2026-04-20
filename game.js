@@ -91,7 +91,7 @@ var trailChallenges = [
     { q: 'Bajo é um...', opts: ['Pássaro', 'Rinoceronte'], correct: 1 },
     { q: 'Tina é uma...', opts: ['Girafa', 'Cobra'], correct: 0 },
     { q: 'Leco é um...', opts: ['Macaco', 'Leão'], correct: 0 },
-    { q: 'A Coruja representa...', opts: ['Sabedoria', 'Preguiça'], correct: 0 },
+    { q: 'A Coruja representa...', opts: ['Paciência', 'Preguiça'], correct: 0 },
     { q: 'O que é um coração saudável?', opts: ['Cheio de virtudes', 'Cheio de medo'], correct: 0 },
     { q: 'Atitude saudável vem de...', opts: ['Comunicação saudável', 'Raiva'], correct: 0 },
     { q: 'O tesouro escondido está...', opts: ['Dentro de nós', 'No fundo do mar'], correct: 0 },

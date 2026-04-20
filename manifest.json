@@ -1,6 +1,6 @@
 {
-  "name": "Differentia - Um Mundo de Descobertas",
-  "short_name": "Differentia",
+  "name": "Lupa - Um Mundo de Descobertas",
+  "short_name": "Lupa",
   "description": "Jogos educativos baseados no Metodo Lupa",
   "start_url": "./index.html",
   "scope": "./",
